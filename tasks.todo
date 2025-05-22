@@ -1,0 +1,29 @@
+Map Checklist:
+	✔ Map existante @done (5/22/2025, 7:21:01 PM)
+	✔ Map est rectangulaire ? @done (5/22/2025, 4:35:55 PM)
+	✔ Fichier pas vide @done (5/22/2025, 7:21:02 PM)
+	✔ Check que les murs sont pleins @done (5/22/2025, 5:37:14 PM)
+	✔ Check exit = 1 (E) @done (5/22/2025, 7:11:34 PM)
+	✔ Check start = 1 (P) @done (5/22/2025, 7:11:35 PM)
+	✔ Check collectibles >= 1 (C) @done (5/22/2025, 7:11:36 PM)
+	✔ Parcourir la map est verifier si il y a un caractere != C || E || P || 0 || 1 @done (5/22/2025, 7:20:12 PM)
+	☐ Verifier le nom du fichier (.ber)
+	☐ Verifier qu'il n'y a pas d'espaces au milieux etc
+
+Game Checklist:
+	☐ Creer une fenetre avec Minilibx
+	☐ Charger toutes les images
+
+Draw Checklist:
+	☐ Draw the background
+	☐ Draw the wall
+	☐ Draw the spirit with animation
+	☐ Draw the collectibles + exit
+
+Idee map:
+	Voleur qui doit recup des coins et la sortie c'est la banque
+	ou un bail du genre
+
+Probleme code:
+	☐ Makefile qui relink
+	☐ Faires les messages d'erreurs pour les messages correspondant
