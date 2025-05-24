@@ -6,12 +6,12 @@
 #    By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/21 14:57:30 by lgoras            #+#    #+#              #
-#    Updated: 2025/05/22 19:25:47 by lgoras           ###   ########.fr        #
+#    Updated: 2025/05/24 12:48:37 by lgoras           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc -g
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I$(INCLUDE) -I$(INCLUDE_LIBFT) -I$(LIBFT_DIR)/srcs/mlx
 NAME = so_long
 
 LIBFT_DIR = BIG_LIBFT
@@ -27,6 +27,8 @@ HEADER = $(INCLUDE)/so_long.h
 
 SRCS = \
 	$(PATH_SRCS)/main.c \
+	$(PATH_SRCS)/texture.c \
+	$(PATH_SRCS)/move.c \
 	$(PATH_UTILS)/utils.c \
 	$(PATH_PARSING)/flood_fill.c \
 	$(PATH_PARSING)/parsing_map.c

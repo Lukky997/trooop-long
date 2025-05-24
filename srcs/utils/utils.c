@@ -6,7 +6,7 @@
 /*   By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:44:33 by lgoras            #+#    #+#             */
-/*   Updated: 2025/05/22 20:09:10 by lgoras           ###   ########.fr       */
+/*   Updated: 2025/05/23 15:58:40 by lgoras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,18 @@ void	make_map_2d(t_data *data, const char *filename)
 	free(result);
 	if (!data->map)
 		exit_error(1);
+}
+
+int is_ber_file(const char *filename)
+{
+	const char *ext;
+
+	if (!filename)
+		return (0);
+	ext = ft_strchr(filename, '.');
+	if (!ext)
+		return (0);
+	if (ft_strncmp(ext, ".ber", 5) == 0)
+		return (1);
+	return (0);
 }

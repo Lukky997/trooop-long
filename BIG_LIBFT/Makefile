@@ -65,7 +65,9 @@ all: $(MLX_LIB) $(NAME)
 $(NAME): $(OBJS) $(MLX_LIB)
 	@mkdir -p lib
 	@cp $(MLX_LIB) lib/
-	@$(AR) $(NAME) $(OBJS) lib/libmlx.a
+	@cd lib && ar x libmlx.a
+	@$(AR) $(NAME) $(OBJS) lib/*.o
+	@$(RM) lib/*.o
 
 obj/%.o: srcs/%.c
 	@mkdir -p $(dir $@)

@@ -7,23 +7,24 @@ Map Checklist:
 	✔ Check start = 1 (P) @done (5/22/2025, 7:11:35 PM)
 	✔ Check collectibles >= 1 (C) @done (5/22/2025, 7:11:36 PM)
 	✔ Parcourir la map est verifier si il y a un caractere != C || E || P || 0 || 1 @done (5/22/2025, 7:20:12 PM)
-	☐ Verifier le nom du fichier (.ber)
-	☐ Verifier qu'il n'y a pas d'espaces au milieux etc
+	✔ Verifier le nom du fichier (.ber) @done (5/24/2025, 11:25:18 AM)
+	✔ Verifier qu'il n'y a pas d'espaces au milieux etc @done (5/23/2025, 3:07:59 PM)
 
 Game Checklist:
-	☐ Creer une fenetre avec Minilibx
-	☐ Charger toutes les images
+	✔ Creer une fenetre avec Minilibx @done (5/24/2025, 11:25:15 AM)
+	✔ Charger toutes les images @done (5/24/2025, 11:25:16 AM)
+	☐ Gerer les deplacements + animation
 
 Draw Checklist:
-	☐ Draw the background
-	☐ Draw the wall
-	☐ Draw the spirit with animation
-	☐ Draw the collectibles + exit
+	✔ Draw the background @done (5/24/2025, 11:25:07 AM)
+	✔ Draw the wall @done (5/24/2025, 12:30:04 PM)
+	✔ Draw the spirit with animation @done (5/24/2025, 11:25:10 AM)
+	✔ Draw the collectibles + exit @done (5/24/2025, 11:25:12 AM)
 
 Idee map:
-	Voleur qui doit recup des coins et la sortie c'est la banque
-	ou un bail du genre
+	~
 
 Probleme code:
 	☐ Makefile qui relink
 	☐ Faires les messages d'erreurs pour les messages correspondant
+	☐ changer les 'i' et 'j' par 'x' et 'y'

@@ -6,7 +6,7 @@
 /*   By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:03:24 by lgoras            #+#    #+#             */
-/*   Updated: 2025/05/22 20:10:23 by lgoras           ###   ########.fr       */
+/*   Updated: 2025/05/24 13:06:45 by lgoras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ int	check_map_element(t_data *data, char element)
 				data->count++;
 			if (data->map[i][j] == 'P')
 			{
-				data->coord.x = i;
-				data->coord.y = j;
+				data->coord.x = j;
+				data->coord.y = i;
 			}
 			j++;
 		}
