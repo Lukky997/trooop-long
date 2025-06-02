@@ -6,18 +6,11 @@
 /*   By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:44:33 by lgoras            #+#    #+#             */
-/*   Updated: 2025/05/23 15:58:40 by lgoras           ###   ########.fr       */
+/*   Updated: 2025/06/02 14:55:19 by lgoras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	exit_error(int nb)
-{
-	if (nb == 1)
-		ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
-}
 
 void	free_map(char **map)
 {
@@ -44,7 +37,7 @@ char	*read_map_file(const char *filename)
 	result = NULL;
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		exit_error(1);
+		exit_error("Error : Failed to open map file\n");
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -69,16 +62,16 @@ void	make_map_2d(t_data *data, const char *filename)
 
 	result = read_map_file(filename);
 	if (!result || !is_map_clean(result))
-		exit_error(1);
+		exit_error("Error : Map contains empty lines or invalid format\n");
 	data->map = ft_split(result, '\n');
 	free(result);
 	if (!data->map)
-		exit_error(1);
+		exit_error("Error : Memory allocation for map failed\n");
 }
 
-int is_ber_file(const char *filename)
+int	is_ber_file(const char *filename)
 {
-	const char *ext;
+	const char	*ext;
 
 	if (!filename)
 		return (0);

@@ -6,7 +6,7 @@
 #    By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/21 14:57:30 by lgoras            #+#    #+#              #
-#    Updated: 2025/05/24 12:48:37 by lgoras           ###   ########.fr        #
+#    Updated: 2025/06/02 12:06:14 by lgoras           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS = \
 	$(PATH_SRCS)/texture.c \
 	$(PATH_SRCS)/move.c \
 	$(PATH_UTILS)/utils.c \
+	$(PATH_UTILS)/exit.c \
 	$(PATH_PARSING)/flood_fill.c \
 	$(PATH_PARSING)/parsing_map.c
 

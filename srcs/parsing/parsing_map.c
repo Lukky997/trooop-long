@@ -6,7 +6,7 @@
 /*   By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:03:24 by lgoras            #+#    #+#             */
-/*   Updated: 2025/05/24 13:06:45 by lgoras           ###   ########.fr       */
+/*   Updated: 2025/06/02 12:54:28 by lgoras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	is_map_clean(char *map)
 	while (map[i])
 	{
 		if ((map[i] == '\n' && map[i + 1] == '\n') || (map[i] == '\n' && map[i
-				+ 1] == ' ') || map[i] == ' ')
+					+ 1] == ' ') || map[i] == ' ')
 		{
 			free(map);
 			return (0);
@@ -43,13 +43,17 @@ int	is_map_rectangular(char **map)
 	if (!map || !map[0])
 		return (0);
 	width = ft_strlen(map[0]);
+	if (width > MAX_MAP_WIDTH)
+		return(0);
 	i = 1;
 	while (map[i])
 	{
-		if (ft_strlen(map[i]) != width)
+		if (ft_strlen(map[i]) != width || ft_strlen(map[i]) > MAX_MAP_WIDTH)
 			return (0);
 		i++;
 	}
+	if (i > MAX_MAP_HEIGHT)
+		return (0);
 	return (1);
 }
 

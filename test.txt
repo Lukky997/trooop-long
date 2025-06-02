@@ -1,0 +1,7 @@
+void	exit_error(const char *msg)
+{
+	ft_putstr_fd("\033[1;31mError\n", 2);      // Rouge + gras
+	ft_putstr_fd(msg, 2);
+	ft_putstr_fd("\033[0m", 2);                // Reset style
+	exit(EXIT_FAILURE);
+}

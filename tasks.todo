@@ -13,7 +13,7 @@ Map Checklist:
 Game Checklist:
 	✔ Creer une fenetre avec Minilibx @done (5/24/2025, 11:25:15 AM)
 	✔ Charger toutes les images @done (5/24/2025, 11:25:16 AM)
-	☐ Gerer les deplacements + animation
+	✔ Gerer les deplacements + animation @done (5/27/2025, 6:08:48 PM)
 
 Draw Checklist:
 	✔ Draw the background @done (5/24/2025, 11:25:07 AM)
@@ -25,6 +25,11 @@ Idee map:
 	~
 
 Probleme code:
-	☐ Makefile qui relink
-	☐ Faires les messages d'erreurs pour les messages correspondant
-	☐ changer les 'i' et 'j' par 'x' et 'y'
+	✔ Faire le systeme d'exit @done (6/2/2025, 1:03:44 PM)
+	✔ Gerer les leaks @done (6/2/2025, 1:09:42 PM)
+	✔ Makefile qui relink @done (6/2/2025, 1:38:51 PM)
+	✔ Faires les messages d'erreurs pour les messages correspondant @done (6/2/2025, 1:24:29 PM)
+	✔ changer les 'i' et 'j' par 'x' et 'y' @done (6/2/2025, 1:38:52 PM)
+	✔ Appuyer sur la croix pour fermer le jeu @done (6/2/2025, 1:30:15 PM)
+	✔ Mettre a la norme @done (5/27/2025, 6:17:35 PM)
+	✔ Faire le flood fill @done (6/2/2025, 12:39:31 PM)
