@@ -6,43 +6,65 @@
 /*   By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 12:03:55 by lgoras            #+#    #+#             */
-/*   Updated: 2025/06/02 14:56:15 by lgoras           ###   ########.fr       */
+/*   Updated: 2025/06/02 15:45:21 by lgoras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	free_exit(t_data *data)
+static void	cleanup_images(t_data *data)
 {
-	mlx_destroy_image(data->mlx, data->img[0]);
-	mlx_destroy_image(data->mlx, data->img[1]);
-	mlx_destroy_image(data->mlx, data->img[2]);
-	mlx_destroy_image(data->mlx, data->img[3]);
-	mlx_destroy_image(data->mlx, data->img[4]);
-	mlx_destroy_image(data->mlx, data->img[5]);
-	mlx_destroy_image(data->mlx, data->img[6]);
-	mlx_destroy_image(data->mlx, data->img[7]);
-	mlx_destroy_image(data->mlx, data->img[8]);
-	mlx_destroy_image(data->mlx, data->img[9]);
-	free_map(data->map);
+	int	i;
+
+	i = -1;
+	while (++i < 10)
+	{
+		if (data->img[i] && data->mlx)
+		{
+			mlx_destroy_image(data->mlx, data->img[i]);
+			data->img[i] = NULL;
+		}
+	}
+}
+
+static void	cleanup_resources(t_data *data)
+{
+	if (!data)
+		return ;
+	cleanup_images(data);
+	if (data->map)
+	{
+		free_map(data->map);
+		data->map = NULL;
+	}
+	if (data->mlx_window && data->mlx)
+	{
+		mlx_destroy_window(data->mlx, data->mlx_window);
+		data->mlx_window = NULL;
+	}
+	if (data->mlx)
+	{
+		mlx_destroy_display(data->mlx);
+		free(data->mlx);
+		data->mlx = NULL;
+	}
 }
 
 int	close_window(t_data *data)
 {
-	free_exit(data);
-	mlx_destroy_window(data->mlx, data->mlx_window);
-	mlx_destroy_display(data->mlx);
-	free(data->mlx);
+	cleanup_resources(data);
 	exit(0);
 	return (0);
 }
 
-int	exit_error(char *error)
+int	exit_error(char *error, t_data *data)
 {
 	ft_putstr_fd("\033[1;31m", 2);
 	ft_putstr_fd(error, 2);
 	ft_putstr_fd("\033[0m", 2);
+	cleanup_resources(data);
 	exit(EXIT_FAILURE);
+	return (0);
 }
 
 void	winner(t_data *data)
@@ -50,6 +72,6 @@ void	winner(t_data *data)
 	ft_printf("\033[1;92m===================\n");
 	ft_printf("|| Good boy 🐶 ! ||\n");
 	ft_printf("===================\033[0;39m\n");
-	close_window(data);
+	cleanup_resources(data);
 	exit(EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:03:24 by lgoras            #+#    #+#             */
-/*   Updated: 2025/06/02 12:54:28 by lgoras           ###   ########.fr       */
+/*   Updated: 2025/06/02 15:36:58 by lgoras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	is_map_rectangular(char **map)
 		return (0);
 	width = ft_strlen(map[0]);
 	if (width > MAX_MAP_WIDTH)
-		return(0);
+		return (0);
 	i = 1;
 	while (map[i])
 	{

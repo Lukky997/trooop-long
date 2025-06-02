@@ -6,13 +6,13 @@
 /*   By: lgoras < lgoras@student.42.fr >            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 12:25:27 by lgoras            #+#    #+#             */
-/*   Updated: 2025/06/02 13:26:40 by lgoras           ###   ########.fr       */
+/*   Updated: 2025/06/02 15:45:04 by lgoras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	replace_exit_with_open(t_data *data)
+static void	replace_exit_with_open(t_data *data)
 {
 	int	i;
 	int	j;
@@ -34,7 +34,7 @@ void	replace_exit_with_open(t_data *data)
 	}
 }
 
-int	check_move(t_data *data, int x, int y)
+static int	check_move(t_data *data, int x, int y)
 {
 	char	cell;
 
@@ -46,7 +46,7 @@ int	check_move(t_data *data, int x, int y)
 	return (1);
 }
 
-void	move_player(t_data *data, int dx, int dy, int img_dir)
+static void	move_player(t_data *data, int dx, int dy, int img_dir)
 {
 	int	x;
 	int	y;
@@ -77,10 +77,7 @@ void	move_player(t_data *data, int dx, int dy, int img_dir)
 int	handle_keypress(int keycode, t_data *data)
 {
 	if (keycode == XK_Escape)
-	{
 		close_window(data);
-		exit(0);
-	}
 	else if (keycode == W)
 		move_player(data, 0, -1, 3);
 	else if (keycode == A)
